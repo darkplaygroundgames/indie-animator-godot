@@ -1,5 +1,6 @@
 import os
 import colorsys
+import webbrowser
 from .base_panel import Base_Panel
 import bpy
 from bpy.types import Menu, Operator, UIList, AddonPreferences
@@ -53,6 +54,16 @@ class WIZ_PT_wiz_warning_panel(bpy.types.Panel, Base_Panel):
     def draw(self, context):
         pass
 
+
+class WIZ_PT_OpenURLOperator(bpy.types.Operator):
+    bl_idname = "wm.open_url"
+    bl_label = "Open URL"
+
+    def execute(self, context):
+        webbrowser.open("https://patreon.com/DarkPlaygroundGames")
+        return {'FINISHED'}
+
+
 class WIZ_PT_wiz_3D_export_details(bpy.types.Panel, Base_Panel):
     bl_idname = "WIZ_PT_wiz_3D_export_details"
     bl_label = "Export Details"
@@ -77,6 +88,7 @@ class WIZ_PT_wiz_3D_export_details(bpy.types.Panel, Base_Panel):
     def draw(self, context):
         scene = bpy.context.scene
         layout = self.layout
+        self.add_button(context, layout, 'wm.open_url', 'Donate')
         if scene.scene_export_destination:
             name = scene.scene_export_destination.replace("\\", "/").rstrip("/").split("/")[-1]
             self.add_label(context, self.layout, f"Game Project Location ({name}):", alignment = 'LEFT')
