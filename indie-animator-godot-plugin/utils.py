@@ -21,9 +21,9 @@ def get_godot_prefabs_path(collection, collection_selected, file = ""):
     parts = f"{bpy.context.scene.godot_prefab_path}/{_get_hierarchy(collection, not collection_selected)}".replace("\\", "/").split("/")
     parts = list(filter(None, parts))
     if len(parts) <= 1:
-        path = os.path.join(get_godot_project_path(), "Assets", bpy.context.scene.godot_prefab_path, file)
+        path = os.path.join(get_godot_project_path(), bpy.context.scene.godot_prefab_path, file)
     else:
-        path = os.path.join(get_godot_project_path(), "Assets")
+        path = get_godot_project_path()
         for part in parts:
             path = os.path.join(path, part)
         path = os.path.join(path, file)
@@ -33,20 +33,12 @@ def get_godot_prefabs_path(collection, collection_selected, file = ""):
 def get_godot_textures_path(file = ""):
     parts = bpy.context.scene.godot_texture_path.replace("\\", "/").split("/")
     if len(parts) <= 1:
-        path = os.path.join(get_godot_project_path(), "Assets", bpy.context.scene.godot_texture_path, file)
+        path = os.path.join(get_godot_project_path(), bpy.context.scene.godot_texture_path, file)
     else:
-        path = os.path.join(get_godot_project_path(), "Assets")
+        path = get_godot_project_path()
         for part in parts:
             path = os.path.join(path, part)
         path = os.path.join(path, file)
-    create_folders(path)
-    return path
-
-def get_godot_tmp_path(ob_name):
-    path = os.path.join(get_godot_project_path(), "Assets")
-    path = os.path.join(path, "Indie Animator")
-    path = os.path.join(path, "Config")
-    path = os.path.join(path, f"{ob_name}.json")
     create_folders(path)
     return path
 

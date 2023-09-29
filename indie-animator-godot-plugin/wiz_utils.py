@@ -363,7 +363,6 @@ def _export_glb(scene, obj, collection, collection_selected):
     if obj.hide_viewport == False:
         extension = "glb"
         dest = get_godot_prefabs_path(collection, collection_selected, f"{obj.name}.{extension}")
-        temp = f"{get_user_path()}/{obj.name}.glb"
 
         arm_exists = False
         if collection and collection_selected:
@@ -422,7 +421,7 @@ def _export_glb(scene, obj, collection, collection_selected):
                 bpy.data.actions.remove(action)
 
         bpy.ops.export_scene.gltf(
-            filepath=temp,
+            filepath=dest,
             export_format='GLB',
             export_image_format='AUTO',
             export_texture_dir='',
@@ -444,18 +443,6 @@ def _export_glb(scene, obj, collection, collection_selected):
         # Clear any bone transformations so our model ends up in a rest pose
         if arm_exists:
             clear_transformations()
-
-        try:
-            shutil.rmtree(dest)
-        except Exception:
-            pass
-
-
-        try:
-            os.replace(temp, dest)
-        except Exception as err:
-            info(f"Failed to move final file from {temp} to {dest} (Error: {str(err)}")
-
 
         # Rotate the selected objects back to what they were
         if not arm_exists:
