@@ -362,7 +362,7 @@ def _export_glb(scene, obj, collection, collection_selected):
     scene = bpy.context.scene
     if obj.hide_viewport == False:
         extension = "glb"
-        dest = get_godot_prefabs_path(collection, collection_selected, f"{obj.name}.{extension}")
+        dest = get_godot_prefabs_path(collection, collection_selected, f"{obj.name.lower()}.{extension}")
 
         arm_exists = False
         if collection and collection_selected:
@@ -397,6 +397,7 @@ def _export_glb(scene, obj, collection, collection_selected):
             use_snap_edit=True,
             use_snap_nonedit=True,
             use_snap_selectable=False)
+        last_location = (-inv_location[0], -inv_location[1], -inv_location[2])
 
 
         # Rotate all the selected objects so they will face the correct direction
