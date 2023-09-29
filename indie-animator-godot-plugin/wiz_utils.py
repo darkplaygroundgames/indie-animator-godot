@@ -442,8 +442,8 @@ def _export_glb(scene, obj, collection, collection_selected):
         )
 
         # Clear any bone transformations so our model ends up in a rest pose
-        if arm_exists:
-            clear_transformations()
+        #if arm_exists:
+        #    clear_transformations()
 
         # Rotate the selected objects back to what they were
         if not arm_exists:
