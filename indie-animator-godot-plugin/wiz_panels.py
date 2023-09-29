@@ -58,10 +58,13 @@ class WIZ_PT_wiz_warning_panel(bpy.types.Panel, Base_Panel):
 class WIZ_PT_OpenURLOperator(bpy.types.Operator):
     bl_idname = "wm.open_url"
     bl_label = "Open URL"
+    bl_description = "https://patreon.com/DarkPlaygroundGames"
 
     def execute(self, context):
         webbrowser.open("https://patreon.com/DarkPlaygroundGames")
         return {'FINISHED'}
+
+
 
 
 class WIZ_PT_wiz_3D_export_details(bpy.types.Panel, Base_Panel):
@@ -88,7 +91,6 @@ class WIZ_PT_wiz_3D_export_details(bpy.types.Panel, Base_Panel):
     def draw(self, context):
         scene = bpy.context.scene
         layout = self.layout
-        self.add_button(context, layout, 'wm.open_url', 'Donate')
         if scene.scene_export_destination:
             name = scene.scene_export_destination.replace("\\", "/").rstrip("/").split("/")[-1]
             self.add_label(context, self.layout, f"Game Project Location ({name}):", alignment = 'LEFT')
@@ -358,3 +360,18 @@ class WIZ_PT_wiz_animation_panel(bpy.types.Panel, Base_Panel):
             'Stop' if bpy.context.screen.is_animation_playing else 'Play',
             percentage=0.5)
 
+
+class WIZ_PT_wiz_donation_panel(bpy.types.Panel, Base_Panel):
+    bl_idname = "WIZ_PT_wiz_donation_panel"
+    bl_label = "Support Dark Playground Games"
+    bl_space_type = 'VIEW_3D'
+
+    def register():
+        scene = bpy.types.Scene
+
+    def unregister():
+        Base_Panel._unregister(bpy.types.Scene)
+
+    def draw(self, context):
+        layout = self.layout
+        self.add_button(context, layout, 'wm.open_url', 'Donate')
