@@ -11,14 +11,14 @@ A blender plugin used to package up models and animations and ship them to godot
 - Open Blender preferences under Edit>Preferences
 - Click Install and choose the plugin zip file
 
-![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/6e206aae-07ba-4bd1-9372-2a0aa3ed5cb4)
+![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/1b5246a9-ff8d-4165-bdd2-32af01d523ba)
 - Enable the plugin
 
-![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/0df2c8f7-632a-43f3-a5ce-dfd6e8fbdb2f)
+![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/09a8e7a9-3305-4d73-9eb3-1adc9bdfc9db)
 
 - Press 'n' to expand the side bar and show the Indie Animator interface
 
-![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/d00802f0-458c-4f11-a491-6654afb0fc8c)
+![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/08b9baa3-b151-45ba-abf4-2a2a24ad7c95)
 
 # Setup
 
@@ -32,13 +32,13 @@ You are now connected to your Godot project and ready to receive Blender assets!
 - Select a model or multiple models
 - Click the 'Individual' button to export each object as its own asset in Godot or 'Collection' to import a group of objects into a single asset in Godot.  Objects with armatures and animations are always exported as a collection.
 
-![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/b3e9a36c-1b55-46db-b58e-a03d864edb58)
+![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/f754a4a5-7f60-43c5-b11c-9c9b52f17735)
 
 # Receive in Godot
 
 Find the exported assets in your Godot project and drag and drop into your scene
 
-![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/5c5266a6-0416-41a4-b057-ea7d59a343cf)
+![image](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/afe297ee-ef4e-4544-93fd-6dae46a8c4ce)
 
 You're done!!
 
