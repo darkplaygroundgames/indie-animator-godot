@@ -1,6 +1,6 @@
 # Indie Animator for Godot
 
-A blender plugin used to package up models and animations and ship them to godot
+A blender plugin used to package up models and animations and ship them to godot (GLTF Format)
 
 ![robot](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/75528039-47e8-43d6-b693-ad22b2e10f7a)
 
