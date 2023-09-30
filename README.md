@@ -2,7 +2,7 @@
 
 A blender plugin used to package up models and animations and ship them to godot
 
-![robot](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/427d4771-fd17-4379-8963-38b7940a10cf)
+![robot](https://github.com/darkplaygroundgames/indie-animator-godot/assets/145277499/75528039-47e8-43d6-b693-ad22b2e10f7a)
 
 # Installation
 
